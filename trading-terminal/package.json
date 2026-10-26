@@ -1,0 +1,9 @@
+{
+  "name": "grok-bot-terminal",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node engine.mjs --selftest"
+  }
+}

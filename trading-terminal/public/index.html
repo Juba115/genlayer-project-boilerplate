@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grok Bot Terminal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="app" class="window" data-running="true">
+      <header class="chrome">
+        <div class="lights" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="chrome-title">Grok Bot Terminal — overnight · six agents · log first</p>
+        <button class="mode" type="button" data-action="mode">paper · on</button>
+      </header>
+
+      <section class="hero">
+        <button class="power" type="button" data-action="toggle" aria-label="Pause or resume the desk">
+          <span class="bars"></span>
+        </button>
+        <div class="identity">
+          <div class="name-row">
+            <h1>Grok Bot Terminal</h1>
+            <span class="version">v1.0-night</span>
+          </div>
+          <p class="runline"><i class="dot"></i> <span data-bind="runline">running</span></p>
+          <p class="pill" data-bind="headline">DESK · WAITING</p>
+          <p class="sub">every trade gets a reason</p>
+        </div>
+        <div class="stat">
+          <strong data-bind="balance">$44.82</strong>
+          <span>balance</span>
+        </div>
+        <div class="stat">
+          <strong data-bind="trades">0</strong>
+          <span>trades</span>
+        </div>
+        <div class="stat win">
+          <strong data-bind="wins">0</strong>
+          <span>wins</span>
+        </div>
+        <div class="stat loss">
+          <strong data-bind="losses">0</strong>
+          <span>losses</span>
+        </div>
+      </section>
+
+      <section class="origin">
+        <div>
+          <span class="k">from</span>
+          <strong data-bind="from">dexscreener · new pairs + volume</strong>
+        </div>
+        <div class="via" data-bind="via">chief routes the six</div>
+        <div>
+          <span class="k">to</span>
+          <strong data-bind="to">paper book</strong>
+        </div>
+      </section>
+
+      <div class="layout">
+        <aside class="agents" id="agents"></aside>
+        <main>
+          <div class="panel">
+            <div class="panel-head">
+              <span>LIVE FLOW · SCAN → CHECK → SIZE → EXEC → LOG</span>
+              <span data-bind="checked">checked 0</span>
+            </div>
+            <div class="chips" id="chips"></div>
+            <div class="diagram">
+              <div class="node rug">
+                <span class="glyph">!</span>
+                <b>RUG CHECK</b>
+                <small data-bind="rug-node">waiting</small>
+              </div>
+              <svg id="spark" viewBox="0 0 280 70" aria-hidden="true"></svg>
+              <div class="node exec">
+                <span class="glyph">II</span>
+                <b>EXECUTOR</b>
+                <small data-bind="exec-node">flat</small>
+              </div>
+            </div>
+            <p class="flow-caption">pass → size → enter</p>
+            <div class="mini" id="mini"></div>
+          </div>
+
+          <div class="split">
+            <article class="card trade" id="trade"></article>
+            <article class="card tail">
+              <header>
+                <span>$ tail -f night.log</span>
+                <span data-bind="lines">0 lines</span>
+              </header>
+              <ol id="tail"></ol>
+            </article>
+          </div>
+
+          <article class="card result">
+            <header>
+              <span>RESULT · start vs now</span>
+              <span>one night · cairo</span>
+            </header>
+            <div class="result-grid">
+              <div>
+                <span>START</span>
+                <b data-bind="start">$44.82</b>
+              </div>
+              <div class="bar-wrap">
+                <div class="bar"><i id="bar-dot"></i></div>
+                <small data-bind="record"></small>
+              </div>
+              <div class="now">
+                <span>NOW</span>
+                <b data-bind="now">$44.82</b>
+                <small data-bind="wl">0 W / 0 L</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="card log">
+            <header>
+              <span>LOG</span>
+              <span class="ask">would you long this? → reading the log</span>
+            </header>
+            <div id="log"></div>
+          </article>
+
+          <div class="dock" id="dock" hidden>
+            <div>
+              <b data-bind="hold-title">Chief is holding an order</b>
+              <p data-bind="hold-copy"></p>
+            </div>
+            <div class="dock-actions">
+              <button type="button" data-action="reject">Decline</button>
+              <button type="button" class="yes" data-action="approve">Approve</button>
+            </div>
+          </div>
+
+          <footer>
+            <span>Paper book marks live DEX prices. Live mode waits for a yes and still does not send an exchange order.</span>
+            <span class="footer-actions">
+              <button type="button" data-action="flatten">Flatten</button>
+              <button type="button" data-action="reset">Reset night</button>
+            </span>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
