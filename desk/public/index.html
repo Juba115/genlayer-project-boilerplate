@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grok Desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="phone" id="app">
+      <div class="status">
+        <span id="clock">--:--</span>
+        <span class="pill" id="multiple">1.00×</span>
+        <span class="agents-n">6 agents</span>
+      </div>
+      <header>
+        <div class="brand">
+          <span class="logo">G</span>
+          <div>
+            <strong>Grok Desk</strong>
+            <small>paper · six agents · one pass</small>
+          </div>
+        </div>
+        <span class="live"><i></i> Live</span>
+      </header>
+      <div class="tape" id="tape"></div>
+      <section class="equity">
+        <div>
+          <p class="label">Equity · started with $2,324</p>
+          <h1 id="balance">$2,324</h1>
+          <p id="pnl" class="up">+$0.00</p>
+        </div>
+        <div class="eq-side">
+          <b id="mult-badge">1.00×</b>
+          <svg id="spark" viewBox="0 0 220 64"></svg>
+          <small id="trade-count">0 trades</small>
+        </div>
+      </section>
+      <section class="reco" id="reco">waiting for the first pass</section>
+      <section class="grid" id="grid"></section>
+      <section class="card">
+        <header><span>Activity</span><span id="wl">0 wins · 0 losses</span></header>
+        <ol id="log"></ol>
+      </section>
+      <section class="card copy">
+        <header><span>Who we check</span><span id="lead-label">paper rank</span></header>
+        <div class="leads" id="leads"></div>
+        <p class="hint">Whale Tail fires a lead after two losses, then copies the next name at 0.25× of its ticket. This is a paper rank, not those wallets.</p>
+      </section>
+      <section class="card goal">
+        <header><span>Goal: <b id="goal-label">2×</b></span><span id="goal-note">tap to raise</span></header>
+        <div class="track" id="track"></div>
+      </section>
+      <footer>
+        <span>One pass scores every agent, then Guard can veto on slippage. No exchange order is sent.</span>
+        <button type="button" id="flatten">Flatten</button>
+      </footer>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+:root {
+  color-scheme: light;
+  --bg: #e7ebf0;
+  --card: #ffffff;
+  --ink: #16181d;
+  --muted: #6d7585;
+  --line: #e6e9ef;
+  --green: #16a34a;
+  --red: #e11d48;
+  font-family: Outfit, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: radial-gradient(circle at top, #f7f8fb, var(--bg) 46%); color: var(--ink); }
+button { font: inherit; cursor: pointer; }
+.phone {
+  width: min(460px, calc(100% - 20px));
+  margin: 18px auto 28px;
+  background: #f4f6f8;
+  border-radius: 28px;
+  padding: 14px 14px 18px;
+  box-shadow: 0 24px 60px rgba(20, 24, 33, 0.12);
+}
+.status, header, .equity, .card header, footer { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.status { color: var(--muted); font-size: 12px; font-family: "IBM Plex Mono", monospace; }
+.pill, .live, .eq-side b {
+  background: #111; color: white; border-radius: 999px; padding: 3px 8px; font-size: 12px;
+}
+.brand { display: flex; gap: 8px; align-items: center; }
+.logo {
+  width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center;
+  background: #111; color: white; font-weight: 700;
+}
+.brand small, .label, .hint, .card header, footer { color: var(--muted); }
+.brand strong { display: block; font-size: 18px; }
+.live { background: #e8f8ee; color: var(--green); }
+.live i { width: 7px; height: 7px; border-radius: 50%; background: var(--green); display: inline-block; margin-right: 4px; }
+.tape { display: flex; gap: 6px; overflow: auto; margin: 10px 0; }
+.chip { background: white; border-radius: 999px; padding: 4px 8px; font-size: 12px; white-space: nowrap; }
+.chip.up { color: var(--green); }
+.chip.down { color: var(--red); }
+.equity { align-items: flex-end; }
+.equity h1 { margin: 0; font-size: 52px; letter-spacing: -0.05em; line-height: 0.95; }
+.up { color: var(--green); }
+.down { color: var(--red); }
+.eq-side { text-align: right; }
+.eq-side b { background: var(--green); }
+#spark { width: 180px; height: 54px; display: block; }
+.reco {
+  margin: 8px 0 12px;
+  background: #111; color: white; border-radius: 16px; padding: 10px 12px;
+  font-size: 14px;
+}
+.reco small { display: block; color: #b9c0cc; font-family: "IBM Plex Mono", monospace; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.agent, .card { background: var(--card); border-radius: 18px; padding: 10px; }
+.agent { min-height: 118px; }
+.agent .top { display: flex; justify-content: space-between; gap: 6px; }
+.dot { width: 22px; height: 22px; border-radius: 8px; display: inline-grid; place-items: center; color: white; font-size: 11px; font-weight: 700; }
+.orange { background: #f59e0b; } .blue { background: #3b82f6; } .teal { background: #14b8a6; }
+.purple { background: #8b5cf6; } .pink { background: #ec4899; } .red { background: #ef4444; }
+.agent b { font-size: 14px; }
+.agent .job, .agent .stat { color: var(--muted); font-size: 11px; margin: 2px 0; }
+.agent .hold { font-weight: 650; font-size: 13px; }
+.mini { width: 100%; height: 28px; }
+.card { margin-top: 8px; }
+.card header { font-size: 13px; margin-bottom: 6px; }
+#log { list-style: none; margin: 0; padding: 0; }
+#log li { display: grid; grid-template-columns: 10px 1fr auto; gap: 6px; font-size: 12px; padding: 4px 0; border-top: 1px solid var(--line); }
+#log i { width: 8px; height: 8px; border-radius: 50%; margin-top: 4px; }
+.leads { display: flex; gap: 8px; }
+.lead { width: 42px; text-align: center; font-size: 11px; color: var(--muted); }
+.avatar { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: white; font-weight: 700; margin: 0 auto 3px; }
+.lead.now .avatar { outline: 2px solid #111; }
+.lead.fired { opacity: 0.4; }
+.hint { font-size: 11px; margin: 8px 0 0; }
+.track { display: flex; gap: 6px; }
+.track button { flex: 1; border: 0; background: #eef2f6; border-radius: 999px; padding: 7px 0; }
+.track button.on { background: #111; color: white; }
+footer { margin-top: 10px; font-size: 11px; }
+footer button { border: 0; background: #111; color: white; border-radius: 999px; padding: 8px 12px; }
+@media (max-width: 520px) {
+  .equity h1 { font-size: 40px; }
+  #spark { width: 120px; }
+}
